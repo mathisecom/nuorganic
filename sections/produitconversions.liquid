@@ -290,7 +290,8 @@
             {% endif %}
           </div>
 
-          {% form 'product', product_obj, id: 'PDPForm-' | append: section.id, class: 'pdp-form' %}
+          {% assign product_form_id = 'PDPForm-' | append: section.id %}
+          {% form 'product', product_obj, id: product_form_id, class: 'pdp-form' %}
             {% unless product_obj.has_only_default_variant %}
               <div class="pdp-variant-field">
                 <label for="PDPVariant-{{ section.id }}">{{ section.settings.variant_label }}</label>
